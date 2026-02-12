@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFL Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">NFL Dashboard</div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-tab="division-odds">Division Winner %</button>
+    </div>
+    <div class="nav-meta">
+      <select id="season-select" class="season-select"></select>
+      <span id="last-updated" class="last-updated"></span>
+    </div>
+  </nav>
+
+  <main>
+    <section id="division-odds" class="tab-content active">
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>AFC East</h3>
+          <div class="chart-wrapper"><canvas id="chart-afc-east"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>NFC East</h3>
+          <div class="chart-wrapper"><canvas id="chart-nfc-east"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>AFC North</h3>
+          <div class="chart-wrapper"><canvas id="chart-afc-north"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>NFC North</h3>
+          <div class="chart-wrapper"><canvas id="chart-nfc-north"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>AFC South</h3>
+          <div class="chart-wrapper"><canvas id="chart-afc-south"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>NFC South</h3>
+          <div class="chart-wrapper"><canvas id="chart-nfc-south"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>AFC West</h3>
+          <div class="chart-wrapper"><canvas id="chart-afc-west"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>NFC West</h3>
+          <div class="chart-wrapper"><canvas id="chart-nfc-west"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="empty-state" class="empty-state" style="display:none">
+      <p>No data available yet for this season.</p>
+      <p class="text-muted">Run the fetch script or wait for the next scheduled snapshot.</p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
